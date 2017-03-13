@@ -21,10 +21,27 @@ func ExampleGetSuccessResponseIfACommandIsGive() {
 	}
 
 	if rsp.StatusCode != 200 {
-		fmt.Printf("Wrong Response with status: %s", rsp.Status)
+		fmt.Printf("UnSuccesful Response with status: %s", rsp.Status)
+	} else {
+		fmt.Printf("Successful Response with status: %s", rsp.Status)
+	}
+
+	//Output: Successful Response with status: 200 OK
+}
+
+func ExampleGetUnSuccessfulResponseIfACommandIsGive() {
+	entity := url.Values{}
+	rsp, err := http.PostForm(APIAddress+"/task/run", entity)
+	if err != nil {
+		fmt.Println(err)
 		return
 	}
 
-	fmt.Printf("Successful Response with status: %s", rsp.Status)
-	//Output: Successful Response with status: 200
+	if rsp.StatusCode != 200 {
+		fmt.Printf("UnSuccesful Response with status: %s", rsp.Status)
+	} else {
+		fmt.Printf("Successful Response with status: %s", rsp.Status)
+	}
+
+	//Output: UnSuccessful Response with status: 500 OK
 }
