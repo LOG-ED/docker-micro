@@ -19,10 +19,8 @@ func ExampleGetSuccessfulResponseIfRequestMethodIsGet() {
 	}
 
 	switch rsp.StatusCode {
-	case 200:
+	case 200, 201:
 		fmt.Printf("Successful Response with status: %s", rsp.Status)
-	case 201:
-		fmt.Printf("Created Response with status: %s", rsp.Status)
 	default:
 		fmt.Printf("UnSuccessful Response with status: %s", rsp.Status)
 	}
@@ -39,10 +37,8 @@ func ExampleGetCreatedResponseIfRequestMethodIsPost() {
 	}
 
 	switch rsp.StatusCode {
-	case 200:
+	case 200, 201:
 		fmt.Printf("Successful Response with status: %s", rsp.Status)
-	case 201:
-		fmt.Printf("Created Response with status: %s", rsp.Status)
 	default:
 		fmt.Printf("UnSuccessful Response with status: %s", rsp.Status)
 	}
