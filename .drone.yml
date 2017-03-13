@@ -15,7 +15,7 @@ pipeline:
 
   api:
     image: microhq/micro:latest
-    command: --enable_stats --api_namespace docker-micro.srv api
+    command: api --enable_stats --api_namespace docker-micro.srv
     detach: true
 
   test:
