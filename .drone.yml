@@ -15,7 +15,7 @@ pipeline:
 
   api:
     image: microhq/micro:latest
-    command: micro list services
+    command: list services
     detach: true
 
   test:
