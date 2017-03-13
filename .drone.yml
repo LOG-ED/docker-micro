@@ -1,7 +1,7 @@
 pipeline:
   bootstrap:
     image: progrium/consul:latest
-    commands: -server -bootstrap -rejoin
+    command: -server -bootstrap -rejoin
     detach: true
 
   build:
