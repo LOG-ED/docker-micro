@@ -1,7 +1,7 @@
 pipeline:
   bootstrap:
     image: progrium/consul:latest
-    command: -server -bootstrap -rejoin -advertise=127.0.0.1
+    command: -server -bootstrap -rejoin -advertise=192.168.0.25
     detach: true
 
   build:
@@ -21,7 +21,8 @@ pipeline:
   test:
     image: golang:1.7
     commands:
+      - sleep 240 
       - curl http://127.0.0.1:8080
-      - sleep 240  
+       
     
 

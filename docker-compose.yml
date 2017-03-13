@@ -20,4 +20,4 @@ services:
         image: microhq/micro:latest
         command: --registry_address=registry:8500 web
         ports:
-            - "8080:8080"
+            - "8080:8082"
