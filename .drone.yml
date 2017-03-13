@@ -7,7 +7,7 @@ pipeline:
   build:
     image: golang:1.7
     commands:
-      - cp -r /drone/src /go/src
+      - cp -r /drone/src /go/
       - cd /go/src/github.com/LOG-ED/docker-micro
       - go get 
       - go build 
