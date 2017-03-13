@@ -18,6 +18,6 @@ services:
 
     api:
         image: microhq/micro:latest
-        command: web --registry_address=registry:8500
+        command: --registry_address=registry:8500 web
         ports:
             - "8080:8080"

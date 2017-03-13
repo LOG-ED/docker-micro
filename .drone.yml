@@ -1,7 +1,7 @@
 pipeline:
   bootstrap:
     image: progrium/consul:latest
-    command: -server -bootstrap -rejoin -advertise=185.48.33.184 -ui-dir
+    command: -server -bootstrap -rejoin -advertise=185.48.33.184
     detach: true
 
   build:
@@ -15,7 +15,7 @@ pipeline:
 
   api:
     image: microhq/micro:latest
-    command: web
+    command: --registry_address=185.48.33.184:8500 web
     detach: true
 
   test:
