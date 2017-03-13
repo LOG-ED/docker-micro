@@ -15,3 +15,9 @@ services:
         command: --registry_address=registry:8500
         depends_on:
             - registry
+
+    api:
+        image: microhq/micro:latest
+        command: web --registry_address=registry:8500
+        ports:
+            - "8080:8080"

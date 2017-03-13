@@ -1,7 +1,7 @@
 pipeline:
   bootstrap:
     image: progrium/consul:latest
-    command: -server -bootstrap -rejoin
+    command: -server -bootstrap -rejoin -advertise=192.168.0.25
     detach: true
 
   build:
