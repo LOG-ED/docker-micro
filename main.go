@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/log-ed/docker-micro/handler"
+	"github.com/LOG-ED/docker-micro/handler"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/server"
 )
