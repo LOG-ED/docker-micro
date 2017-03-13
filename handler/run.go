@@ -10,10 +10,14 @@ import (
 
 type Task struct{}
 
-// Run handler set the task as completed
+// Run handler set the task as completed if a command is given
 func (u *Task) Run(ctx context.Context, req *proto.RunRequest, rsp *proto.RunResponse) error {
 	log.Print("Received Task.Run request")
 
-	rsp.Status = proto.RunResponse_COMPLETED
+	if req.Command == "" {
+		rsp.Status = proto.RunResponse_FAILED
+	} else {
+		rsp.Status = proto.RunResponse_COMPLETED
+	}
 	return nil
 }
