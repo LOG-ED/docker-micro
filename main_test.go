@@ -19,7 +19,7 @@ func ExampleGetSuccessResponseIfRequestMethodIsPost() {
 	}
 
 	if rsp.StatusCode != 200 {
-		fmt.Printf("UnSuccesful Response with status: %s", rsp.Status)
+		fmt.Printf("UnSuccessful Response with status: %s", rsp.Status)
 	} else {
 		fmt.Printf("Successful Response with status: %s", rsp.Status)
 	}
@@ -35,7 +35,7 @@ func ExampleGetUnSuccessfulResponseIfRequestMethodIsGet() {
 	}
 
 	if rsp.StatusCode != 200 {
-		fmt.Printf("UnSuccesful Response with status: %s", rsp.Status)
+		fmt.Printf("UnSuccessful Response with status: %s", rsp.Status)
 	} else {
 		fmt.Printf("Successful Response with status: %s", rsp.Status)
 	}
