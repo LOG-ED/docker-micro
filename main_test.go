@@ -10,10 +10,8 @@ var (
 	APIAddress = "http://localhost:8080"
 )
 
-func ExampleGetSuccessResponseIfACommandIsGive() {
-	entity := url.Values{
-		"Command": []string{"ANY"},
-	}
+func ExampleGetSuccessResponseIfRequestMethodIsPost() {
+	entity := url.Values{}
 	rsp, err := http.PostForm(APIAddress+"/task/run", entity)
 	if err != nil {
 		fmt.Println(err)
@@ -29,9 +27,8 @@ func ExampleGetSuccessResponseIfACommandIsGive() {
 	//Output: Successful Response with status: 200 OK
 }
 
-func ExampleGetUnSuccessfulResponseIfACommandIsGive() {
-	entity := url.Values{}
-	rsp, err := http.PostForm(APIAddress+"/task/run", entity)
+func ExampleGetUnSuccessfulResponseIfRequestMethodIsGet() {
+	rsp, err := http.Get(APIAddress + "/task/run")
 	if err != nil {
 		fmt.Println(err)
 		return

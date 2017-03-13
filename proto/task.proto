@@ -5,15 +5,15 @@ service Task {
 }
 
 message RunRequest {
-	string command = 1;
+	string method = 1;
 }
 
 message RunResponse {
-	enum Status {
+	enum StatusCode {
 		UNKNOWN = 0;
 		COMPLETED = 200;
 		FAILED = 500;
 	}
 
-	Status status = 1;
+	StatusCode statusCode = 1;
 }
