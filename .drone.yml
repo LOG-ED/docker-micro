@@ -1,12 +1,14 @@
 pipeline:
+  bootstrap:
+    image: redis
+    image: progrium/consul:latest
+    commands: -server -bootstrap -rejoin
+    detach: true
+
   build:
-    image: golang:1.7-alpine
+    image: golang:1.7
     commands:
+      - go get 
       - go build 
       - ./docker-micro &
       - go run test/client.go
-
-services:
-  consul:
-    image: progrium/consul:latest
-    commands: -server -bootstrap -rejoin
