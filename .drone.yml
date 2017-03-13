@@ -11,5 +11,5 @@ pipeline:
       - cd /go/src/github.com/LOG-ED/docker-micro
       - go build 
       - ./docker-micro &
-      - sleep 240
+      - sleep 15
       - go run test/client.go

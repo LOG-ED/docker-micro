@@ -6,7 +6,6 @@ import (
 
 	"github.com/LOG-ED/docker-micro/handler"
 	"github.com/micro/go-micro"
-	"github.com/micro/go-micro/server"
 )
 
 func main() {
@@ -19,9 +18,8 @@ func main() {
 	// optionally setup command line usage
 	service.Init()
 
-	// Register Handlers
-	server.Handle(
-		server.NewHandler(
+	service.Server().Handle(
+		service.Server().NewHandler(
 			new(handler.Task),
 		),
 	)
