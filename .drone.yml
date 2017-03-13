@@ -22,8 +22,7 @@ pipeline:
     image: golang:1.7
     commands:
       - sleep 15
-      - curl http://127.0.0.1:8080
-      #- curl http://127.0.0.1:8082/registry?service=docker-micro.srv.task
+      - curl -X POST http://127.0.0.1:8080/task/run
        
     
 

@@ -5,19 +5,14 @@ service Task {
 }
 
 message RunRequest {
-	enum Command {
-		NONE = 0;
-		MAIN = 1;
-	}
-
-	Command command = 1;
+	string command = 1;
 }
 
 message RunResponse {
 	enum Status {
 		UNKNOWN = 0;
-		COMPLETED = 1;
-		FAILED = 2;
+		COMPLETED = 200;
+		FAILED = 500;
 	}
 
 	Status status = 1;

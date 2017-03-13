@@ -18,7 +18,7 @@ func main() {
 		Command: proto.RunRequest_NONE,
 	}
 
-	req := c.NewRequest("docker-micro.srv.task", "Task.Run", &request)
+	req := c.NewRequest("go.micro.api.task", "Task.Run", &request)
 
 	rsp := &proto.RunResponse{}
 
