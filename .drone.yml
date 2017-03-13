@@ -8,6 +8,6 @@ pipeline:
     image: golang:1.7
     commands:
       - go get 
-      - go build 
-      - ./docker-micro &
+      - go install 
+      - ./go/docker-micro &
       - go run test/client.go
