@@ -1,6 +1,5 @@
 pipeline:
   bootstrap:
-    image: redis
     image: progrium/consul:latest
     commands: -server -bootstrap -rejoin
     detach: true
