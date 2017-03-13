@@ -11,8 +11,7 @@ var (
 )
 
 func ExampleGetSuccessfulResponseIfRequestMethodIsGet() {
-	entity := url.Values{}
-	rsp, err := http.PostForm(APIAddress+"/task/run", entity)
+	rsp, err := http.Get(APIAddress + "/task/run")
 	if err != nil {
 		fmt.Println(err)
 		return
