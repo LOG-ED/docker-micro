@@ -10,7 +10,7 @@ var (
 	APIAddress = "http://localhost:8080"
 )
 
-func ExampleGetSuccessResponseIfRequestMethodIsPost() {
+func ExampleGetSuccessfulResponseIfRequestMethodIsGet() {
 	entity := url.Values{}
 	rsp, err := http.PostForm(APIAddress+"/task/run", entity)
 	if err != nil {
@@ -18,27 +18,34 @@ func ExampleGetSuccessResponseIfRequestMethodIsPost() {
 		return
 	}
 
-	if rsp.StatusCode != 200 {
-		fmt.Printf("UnSuccessful Response with status: %s", rsp.Status)
-	} else {
+	switch rsp.StatusCode {
+	case 200:
 		fmt.Printf("Successful Response with status: %s", rsp.Status)
+	case 201:
+		fmt.Printf("Created Response with status: %s", rsp.Status)
+	default:
+		fmt.Printf("UnSuccessful Response with status: %s", rsp.Status)
 	}
 
 	//Output: Successful Response with status: 200 OK
 }
 
-func ExampleGetUnSuccessfulResponseIfRequestMethodIsGet() {
-	rsp, err := http.Get(APIAddress + "/task/run")
+func ExampleGetCreatedResponseIfRequestMethodIsPost() {
+	entity := url.Values{}
+	rsp, err := http.PostForm(APIAddress+"/task/run", entity)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	if rsp.StatusCode != 200 {
-		fmt.Printf("UnSuccessful Response with status: %s", rsp.Status)
-	} else {
+	switch rsp.StatusCode {
+	case 200:
 		fmt.Printf("Successful Response with status: %s", rsp.Status)
+	case 201:
+		fmt.Printf("Created Response with status: %s", rsp.Status)
+	default:
+		fmt.Printf("UnSuccessful Response with status: %s", rsp.Status)
 	}
 
-	//Output: UnSuccessful Response with status: 500 Internal Server Error
+	//Output: Successful Response with status: 201 Created
 }

@@ -11,7 +11,8 @@ message RunRequest {
 message RunResponse {
 	enum StatusCode {
 		UNKNOWN = 0;
-		COMPLETED = 200;
+		OK = 200;
+		CREATED = 201;
 		FAILED = 500;
 	}
 
