@@ -10,6 +10,18 @@ pipeline:
       - cp -r /drone/src /go/
       - cd /go/src/github.com/LOG-ED/docker-micro
       - go build 
-      - ./docker-micro &
-      - sleep 15
-      - go run test/client.go
+      - ./docker-micro
+    detach: true
+
+  api:
+    image: microhq/micro:latest
+    command: --enable_stats --api_namespace docker-micro.srv api
+    detach: true
+
+  test:
+    image: golang:1.7
+    commands:
+      - curl http://127.0.0.1:8080
+      - sleep 240  
+    
+
