@@ -1,7 +1,7 @@
 pipeline:
   bootstrap:
     image: progrium/consul:latest
-    command: -server -bootstrap -rejoin #-advertise=192.168.0.25
+    command: -server -bootstrap -rejoin
     detach: true
 
   build:
@@ -11,6 +11,8 @@ pipeline:
       - cd /go/src/github.com/LOG-ED/docker-micro
       - go build 
       - ./docker-micro
+      - sleep 20
+      - go run test/client.go
     detach: true
 
   api:
