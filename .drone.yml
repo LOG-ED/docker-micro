@@ -15,7 +15,7 @@ pipeline:
 
   api:
     image: microhq/micro:latest
-    command: web namespace=docker-micro.srv
+    command: web
     detach: true
 
   test:
