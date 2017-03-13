@@ -15,7 +15,7 @@ pipeline:
 
   api:
     image: microhq/micro:latest
-    command: --registry_address=185.48.33.184:8500 web
+    command: web
     detach: true
 
   test:
