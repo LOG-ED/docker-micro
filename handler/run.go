@@ -3,7 +3,7 @@ package handler
 import (
 	"log"
 
-	proto "github.com/log-ed/docker-micro/proto"
+	proto "github.com/LOG-ED/docker-micro/proto"
 
 	"golang.org/x/net/context"
 )

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	proto "github.com/log-ed/docker-micro/proto"
+	proto "github.com/LOG-ED/docker-micro/proto"
 	"github.com/micro/go-micro/client"
 
 	"golang.org/x/net/context"
