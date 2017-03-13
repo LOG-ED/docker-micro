@@ -40,5 +40,5 @@ func ExampleGetUnSuccessfulResponseIfRequestMethodIsGet() {
 		fmt.Printf("Successful Response with status: %s", rsp.Status)
 	}
 
-	//Output: UnSuccessful Response with status: 500 OK
+	//Output: UnSuccessful Response with status: 500 Internal Server Error
 }
