@@ -1,5 +1,5 @@
 pipeline:
-   build:
+  build:
     image: golang:1.7
     commands:
       - cp -r /drone/src /go/
@@ -8,6 +8,12 @@ pipeline:
       - ./docker-micro &
       - sleep 20
       - go test
+      
+  publish:
+    image: plugins/docker
+    repo: fminzoni/docker-micro
+    username: fminzoni
+    password: ${DOCKER_PASSWORD}
 
 services:
   bootstrap:
