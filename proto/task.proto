@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+service Task {
+	rpc Run(RunRequest) returns (RunResponse) {}
+}
+
+message RunRequest {
+	enum Command {
+		NONE = 0;
+		MAIN = 1;
+	}
+
+	Command command = 1;
+}
+
+message RunResponse {
+	enum Status {
+		UNKNOWN = 0;
+		COMPLETED = 1;
+		FAILED = 2;
+	}
+
+	Status status = 1;
+}
