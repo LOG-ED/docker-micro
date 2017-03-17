@@ -1,14 +1,16 @@
 pipeline:
+  workspace:
+    base: /go
+    path: src/github.com/LOG-ED/docker-micro
+
   build:
     image: golang:1.7
     commands:
-      - cp -r /drone/src /go/
-      - cd /go/src/github.com/LOG-ED/docker-micro
       - go build 
       - ./docker-micro &
-      - sleep 20
+      - sleep 15
       - go test
-      
+
   publish:
     image: plugins/docker
     repo: fminzoni/docker-micro
@@ -22,6 +24,3 @@ services:
   api:
     image: microhq/micro:latest
     command: api
-       
-    
-
