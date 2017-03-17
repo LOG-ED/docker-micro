@@ -1,8 +1,8 @@
-pipeline:
-  workspace:
-    base: /go
-    path: src/github.com/LOG-ED/docker-micro
+workspace:
+  base: /go
+  path: src/github.com/LOG-ED/docker-micro
 
+pipeline:
   build:
     image: golang:1.7
     commands:
