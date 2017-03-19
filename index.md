@@ -50,7 +50,7 @@ Sono un programmatore e smanettone della prima ora. Appassionato da sempre di Gi
 ### Prima sessione
  
 **Microservizi.** Dopo un'iniziale presentazione del corso, valuteremo insieme vantaggi e problematiche tipiche delle architetture a microservizi.  
-In questa prima sessione vedremo come strutturare una semplice applicazione di esempio. Utilizzeremo il "framework" [go-micro](https://github.com/micro/go-micro) per sviluppare i microservizi in golang, con l'obiettivo di avere una prima versione funzionante dell'applicazione. 
+In questa prima sessione vedremo come strutturare una semplice applicazione di esempio. Utilizzeremo il framework [go-micro](https://github.com/micro/go-micro) per sviluppare i microservizi in golang, con l'obiettivo di avere una prima versione funzionante dell'applicazione. 
 
 ### Seconda sessione
 
