@@ -1,5 +1,5 @@
 name: Docker Micro
-description: Corso introduttivo su Microservizi, Golang e Docker
+description: Corso introduttivo su Microservizi usando Golang e Docker
 
 #
 # Flags below are optional
