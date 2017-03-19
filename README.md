@@ -22,6 +22,6 @@ Questa tipologia di corso, definita e organizzata da [LOG.ED](https://loged.it) 
    `$ go get -u github.com/golang/protobuf/{proto,protoc-gen-go}` 
 
 3. If changes are made to the Protocol Buffer file use the following command to regenerate:  
-   `$ protoc -I$GOPATH/src --go_out=plugins=micro:$GOPATH/src \ $GOPATH/src/github.com/log-ed/docker-micro/proto/task.proto`
+   `$ protoc -I$GOPATH/src --go_out=plugins=micro:$GOPATH/src \ $GOPATH/src/github.com/LOG-ED/docker-micro/proto/task.proto`
 
 
