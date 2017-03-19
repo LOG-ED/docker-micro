@@ -1,5 +1,5 @@
-# Docker and Golang Microservices
-### Corso introduttivo su Docker e Microservizi in Golang
+# Golang Microservices with Docker
+### Corso introduttivo sui Microservizi usando Golang e Docker
 
 Questo è il repository ufficiale del corso. E' possibile consultare la scheda e i materiali del corso a questo indirizzo: 
 **https://log-ed.github.io/docker-micro**
