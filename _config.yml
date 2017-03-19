@@ -1,5 +1,5 @@
-name: Real Docker
-description: Il corso base di Docker per essere davvero operativi
+name: Docker Micro
+description: Corso introduttivo su Microservizi, Golang e Docker
 
 #
 # Flags below are optional
