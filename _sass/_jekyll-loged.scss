@@ -1,0 +1,135 @@
+.site-name {
+    a {
+      color: $white;
+      text-decoration: none;
+    	cursor: pointer;
+      &:hover{
+        color: darken($navbar-hover-color,20);
+      }
+    }
+}
+
+ .post {
+        a {
+         color: $mono-color;
+         &:hover{
+           color: darken($mono-color,20);
+         }
+     }
+ }
+ 
+ .post-heading {
+        a {
+         color: $hl-color;
+         &:hover{
+           color: darken($hl-color,20);
+         }
+     }
+ }
+ 
+/*
+    *Buttons
+*/
+
+.button,
+button, {
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    color: #555;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    cursor: pointer;
+    box-sizing: border-box; 
+}
+    
+.button:hover,
+button:hover,
+.button:focus,
+button:focus,{
+    color: #333;
+    border-color: #888;
+    outline: 0; }
+    
+.button.button-primary,
+button.button-primary, {
+    color: $mono-color;
+    background-color: transparent;
+    border-color: $mono-color; 
+}
+    
+.button.button-primary:hover,
+button.button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus {
+    color: #FFF;
+    background-color: $mono-color;
+    border-color: $mono-color; 
+}
+
+/*
+    *Header
+*/
+
+.intro-header {
+  border-top: 5px solid white;
+  background-color:$mono-color;
+}
+
+.intro-header .post-heading {
+  padding: 100px 0 50px;
+  color: $white;
+  
+}
+
+.intro-header .post-heading h1 {
+    color:$white;
+    font-size: 36px;
+    line-height: 1.5;
+    font-family:$raleway ;
+}
+
+@media only screen and (min-width: 768px) {
+  .intro-header .post-heading{
+    padding: 150px 0;
+  }
+}
+
+/* 
+    *empty spaces
+*/
+
+.space-medium {
+    padding: 100px 0 50px;
+}
+
+.space-small {
+    padding: 50px 0 25px;
+}
+
+.space-extra-small {
+    padding: 30px 0 15px;
+}
+
+/* 
+    *svg-icons
+    
+*/
+
+.svg-icon {
+    a {
+      color:darken($mono-color,10);
+      cursor: pointer;
+      &:hover {
+        color: darken($mono-color,20);
+      }
+    }
+}
