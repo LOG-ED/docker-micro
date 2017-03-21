@@ -56,7 +56,9 @@ In questa prima sessione vedremo come strutturare una semplice applicazione di e
 
 - [The Art of Scalability, AKF Scale Cube](http://akfpartners.com/techblog/wp-content/uploads/2008/05/app_cube.png)
 - [Play With Docker](http://labs.play-with-docker.com/)
-- [Applicazione di esempio](https://gist.github.com/f-minzoni/27d3f9753744bd00150089b88f07c268)
+- [The protocol buffer language](https://developers.google.com/protocol-buffers/docs/proto3)
+- [Esercitazione su Protobuf e Golang](https://gist.github.com/f-minzoni/8ac69d7193f2f1021743d98e86b67264)
+- [Applicazione a Microservizi di esempio](https://gist.github.com/f-minzoni/27d3f9753744bd00150089b88f07c268)
 
 ### Seconda sessione
 
