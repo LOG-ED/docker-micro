@@ -52,6 +52,12 @@ Sono un programmatore e smanettone della prima ora. Appassionato da sempre di Gi
 **Microservizi.** Dopo un'iniziale presentazione del corso, valuteremo insieme vantaggi e problematiche tipiche delle architetture a microservizi.  
 In questa prima sessione vedremo come strutturare una semplice applicazione di esempio. Utilizzeremo il framework [go-micro](https://github.com/micro/go-micro) per sviluppare i microservizi in golang, con l'obiettivo di avere una prima versione funzionante dell'applicazione. 
 
+#### Materiali
+
+- [The Art of Scalability, AKF Scale Cube](http://akfpartners.com/techblog/wp-content/uploads/2008/05/app_cube.png)
+- [Play With Docker](http://labs.play-with-docker.com/)
+- [Applicazione di esempio](https://gist.github.com/f-minzoni/27d3f9753744bd00150089b88f07c268)
+
 ### Seconda sessione
 
 **Docker.** Con un recap iniziale, ripercorreremo tutti i concetti e gli strumenti visti finora, step-by-step, per avviare l'applicazione e valutare il suo funzionamento. Vedremo quindi come utilizzare Docker Compose per definire le componenti software (servizi) dell'applicazione di esempio e renderla facilmente distribuibile.
