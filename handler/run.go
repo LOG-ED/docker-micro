@@ -11,7 +11,7 @@ import (
 type Task struct{}
 
 // Run handler set the task accordingly to the request method
-func (u *Task) Run(ctx context.Context, req *proto.RunRequest, rsp *proto.RunResponse) error {
+func (t *Task) Run(ctx context.Context, req *proto.RunRequest, rsp *proto.RunResponse) error {
 	log.Printf("Received Task.Run with method: %s", req.Method)
 
 	switch req.Method {

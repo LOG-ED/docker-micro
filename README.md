@@ -18,10 +18,18 @@ Questa tipologia di corso, definita e organizzata da [LOG.ED](https://loged.it) 
 
 1. Download the protol buffers compiler from https://github.com/google/protobuf/releases   
 
-2. Run the following command to install the Go protocol buffers plugin:   
-   `$ go get -u github.com/golang/protobuf/{proto,protoc-gen-go}` 
+2. Run the following command to install the Go protocol buffers plugins:   
+   `$ go get -u github.com/golang/protobuf/{proto,protoc-gen-go}`   
+   `$ go get -u github.com/micro/protobuf/{proto,protoc-gen-go}` 
 
-3. If changes are made to the Protocol Buffer file use the following command to regenerate:  
-   `$ protoc -I$GOPATH/src --go_out=plugins=micro:$GOPATH/src \ $GOPATH/src/github.com/log-ed/docker-micro/proto/task.proto`
+3. If changes are made to the Protocol Buffer file use the following command (from the proto dir) to regenerate the service        stub:  
+   `$ protoc -I. --go_out=plugins=micro:. task.proto`  
+    and the following to regenerate the stub for the google grpc client:  
+   `$ protoc -I. --go_out=plugins=grpc:grpc task.proto` 
+
+
+
+
+
 
 

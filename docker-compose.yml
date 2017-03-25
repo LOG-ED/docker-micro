@@ -16,8 +16,16 @@ services:
         depends_on:
             - registry
 
-    api:
+    web:
         image: microhq/micro:latest
-        command: --registry_address=registry:8500 api
+        command: --registry_address=registry:8500 web
         ports:
-            - "8080:8080"
+            - "80:8082"
+
+    client:
+        build:
+            context: .
+            dockerfile: Dockerfile.client
+        command: --task_endpoint=srv:40521
+        depends_on:
+            - srv

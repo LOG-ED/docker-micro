@@ -19,9 +19,8 @@ import fmt "fmt"
 import math "math"
 
 import (
-	client "github.com/micro/go-micro/client"
-	server "github.com/micro/go-micro/server"
 	context "golang.org/x/net/context"
+	grpc "google.golang.org/grpc"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -102,37 +101,29 @@ func init() {
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ client.Option
-var _ server.Option
+var _ grpc.ClientConn
+
+// This is a compile-time assertion to ensure that this generated file
+// is compatible with the grpc package it is being compiled against.
+const _ = grpc.SupportPackageIsVersion4
 
 // Client API for Task service
 
 type TaskClient interface {
-	Run(ctx context.Context, in *RunRequest, opts ...client.CallOption) (*RunResponse, error)
+	Run(ctx context.Context, in *RunRequest, opts ...grpc.CallOption) (*RunResponse, error)
 }
 
 type taskClient struct {
-	c           client.Client
-	serviceName string
+	cc *grpc.ClientConn
 }
 
-func NewTaskClient(serviceName string, c client.Client) TaskClient {
-	if c == nil {
-		c = client.NewClient()
-	}
-	if len(serviceName) == 0 {
-		serviceName = "proto"
-	}
-	return &taskClient{
-		c:           c,
-		serviceName: serviceName,
-	}
+func NewTaskClient(cc *grpc.ClientConn) TaskClient {
+	return &taskClient{cc}
 }
 
-func (c *taskClient) Run(ctx context.Context, in *RunRequest, opts ...client.CallOption) (*RunResponse, error) {
-	req := c.c.NewRequest(c.serviceName, "Task.Run", in)
+func (c *taskClient) Run(ctx context.Context, in *RunRequest, opts ...grpc.CallOption) (*RunResponse, error) {
 	out := new(RunResponse)
-	err := c.c.Call(ctx, req, out, opts...)
+	err := grpc.Invoke(ctx, "/proto.Task/Run", in, out, c.cc, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -141,20 +132,43 @@ func (c *taskClient) Run(ctx context.Context, in *RunRequest, opts ...client.Cal
 
 // Server API for Task service
 
-type TaskHandler interface {
-	Run(context.Context, *RunRequest, *RunResponse) error
+type TaskServer interface {
+	Run(context.Context, *RunRequest) (*RunResponse, error)
 }
 
-func RegisterTaskHandler(s server.Server, hdlr TaskHandler, opts ...server.HandlerOption) {
-	s.Handle(s.NewHandler(&Task{hdlr}, opts...))
+func RegisterTaskServer(s *grpc.Server, srv TaskServer) {
+	s.RegisterService(&_Task_serviceDesc, srv)
 }
 
-type Task struct {
-	TaskHandler
+func _Task_Run_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TaskServer).Run(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.Task/Run",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TaskServer).Run(ctx, req.(*RunRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
-func (h *Task) Run(ctx context.Context, in *RunRequest, out *RunResponse) error {
-	return h.TaskHandler.Run(ctx, in, out)
+var _Task_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "proto.Task",
+	HandlerType: (*TaskServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Run",
+			Handler:    _Task_Run_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "task.proto",
 }
 
 func init() { proto1.RegisterFile("task.proto", fileDescriptor0) }

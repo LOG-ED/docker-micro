@@ -16,6 +16,8 @@ pipeline:
     repo: fminzoni/docker-micro
     username: fminzoni
     password: ${DOCKER_PASSWORD}
+    when:
+      branch: master
 
 services:
   bootstrap:
