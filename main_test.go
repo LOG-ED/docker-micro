@@ -1,46 +1,66 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"net/http"
-	"net/url"
-)
 
-var (
-	APIAddress = "http://localhost:8080"
+	proto "github.com/LOG-ED/docker-micro/proto"
+	"github.com/micro/go-grpc"
 )
 
 func ExampleGetSuccessfulResponseIfRequestMethodIsGet() {
-	rsp, err := http.Get(APIAddress + "/task/run")
+	service := grpc.NewService()
+	service.Init()
+
+	// use the generated client stub
+	cl := proto.NewTaskClient("go.micro.srv.task", service.Client())
+
+	rsp, err := cl.Run(context.Background(), &proto.RunRequest{
+		Method: "GET",
+	})
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	switch rsp.StatusCode {
-	case 200, 201:
-		fmt.Printf("Successful Response with status: %s", rsp.Status)
-	default:
-		fmt.Printf("UnSuccessful Response with status: %s", rsp.Status)
-	}
-
-	//Output: Successful Response with status: 200 OK
+	fmt.Println(rsp)
+	//Output: {StatusCode:OK}
 }
 
 func ExampleGetCreatedResponseIfRequestMethodIsPost() {
-	entity := url.Values{}
-	rsp, err := http.PostForm(APIAddress+"/task/run", entity)
+	service := grpc.NewService()
+	service.Init()
+
+	// use the generated client stub
+	cl := proto.NewTaskClient("go.micro.srv.task", service.Client())
+
+	rsp, err := cl.Run(context.Background(), &proto.RunRequest{
+		Method: "POST",
+	})
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	switch rsp.StatusCode {
-	case 200, 201:
-		fmt.Printf("Successful Response with status: %s", rsp.Status)
-	default:
-		fmt.Printf("UnSuccessful Response with status: %s", rsp.Status)
+	fmt.Println(rsp)
+	//Output: {StatusCode:CREATED}
+}
+
+func ExampleGetFailedResponseIfRequestMethodIsDelete() {
+	service := grpc.NewService()
+	service.Init()
+
+	// use the generated client stub
+	cl := proto.NewTaskClient("go.micro.srv.task", service.Client())
+
+	rsp, err := cl.Run(context.Background(), &proto.RunRequest{
+		Method: "DELETE",
+	})
+	if err != nil {
+		fmt.Println(err)
+		return
 	}
 
-	//Output: Successful Response with status: 201 Created
+	fmt.Println(rsp)
+	//Output: {StatusCode:FAILED}
 }

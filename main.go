@@ -4,8 +4,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/LOG-ED/docker-micro/handler"
 	proto "github.com/LOG-ED/docker-micro/proto"
+	"github.com/LOG-ED/docker-micro/server"
 	grpc "github.com/micro/go-grpc"
 	"github.com/micro/go-micro"
 )
@@ -20,7 +20,7 @@ func main() {
 	// optionally setup command line usage
 	service.Init()
 
-	proto.RegisterTaskHandler(service.Server(), new(handler.Task))
+	proto.RegisterTaskHandler(service.Server(), new(server.Task))
 
 	// Run server
 	if err := service.Run(); err != nil {
