@@ -28,7 +28,7 @@ func ExampleGetSuccessfulResponseIfRequestMethodIsGet() {
 	}
 
 	fmt.Println(rsp)
-	//Output: {"StatusCode":"OK"}
+	//Output: StatusCode:OK
 }
 
 func ExampleGetCreatedResponseIfRequestMethodIsPost() {
@@ -47,7 +47,7 @@ func ExampleGetCreatedResponseIfRequestMethodIsPost() {
 	}
 
 	fmt.Println(rsp)
-	//Output: {"StatusCode":"CREATED"}
+	//Output: StatusCode:CREATED
 }
 
 func ExampleGetFailedResponseIfRequestMethodIsDelete() {
@@ -66,5 +66,5 @@ func ExampleGetFailedResponseIfRequestMethodIsDelete() {
 	}
 
 	fmt.Println(rsp)
-	//Output: {"StatusCode":"FAILED"}
+	//Output: StatusCode:FAILED
 }
