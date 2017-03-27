@@ -8,12 +8,16 @@ import (
 	"github.com/micro/go-grpc"
 )
 
+const (
+	serviceName = "go.micro.api.task"
+)
+
 func ExampleGetSuccessfulResponseIfRequestMethodIsGet() {
 	service := grpc.NewService()
 	service.Init()
 
 	// use the generated client stub
-	cl := proto.NewTaskClient("go.micro.srv.task", service.Client())
+	cl := proto.NewTaskClient(serviceName, service.Client())
 
 	rsp, err := cl.Run(context.Background(), &proto.RunRequest{
 		Method: "GET",
@@ -24,7 +28,7 @@ func ExampleGetSuccessfulResponseIfRequestMethodIsGet() {
 	}
 
 	fmt.Println(rsp)
-	//Output: {StatusCode:OK}
+	//Output: {"StatusCode":"OK"}
 }
 
 func ExampleGetCreatedResponseIfRequestMethodIsPost() {
@@ -32,7 +36,7 @@ func ExampleGetCreatedResponseIfRequestMethodIsPost() {
 	service.Init()
 
 	// use the generated client stub
-	cl := proto.NewTaskClient("go.micro.srv.task", service.Client())
+	cl := proto.NewTaskClient(serviceName, service.Client())
 
 	rsp, err := cl.Run(context.Background(), &proto.RunRequest{
 		Method: "POST",
@@ -43,7 +47,7 @@ func ExampleGetCreatedResponseIfRequestMethodIsPost() {
 	}
 
 	fmt.Println(rsp)
-	//Output: {StatusCode:CREATED}
+	//Output: {"StatusCode":"CREATED"}
 }
 
 func ExampleGetFailedResponseIfRequestMethodIsDelete() {
@@ -51,7 +55,7 @@ func ExampleGetFailedResponseIfRequestMethodIsDelete() {
 	service.Init()
 
 	// use the generated client stub
-	cl := proto.NewTaskClient("go.micro.srv.task", service.Client())
+	cl := proto.NewTaskClient(serviceName, service.Client())
 
 	rsp, err := cl.Run(context.Background(), &proto.RunRequest{
 		Method: "DELETE",
@@ -62,5 +66,5 @@ func ExampleGetFailedResponseIfRequestMethodIsDelete() {
 	}
 
 	fmt.Println(rsp)
-	//Output: {StatusCode:FAILED}
+	//Output: {"StatusCode":"FAILED"}
 }
