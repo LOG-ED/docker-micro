@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	proto "github.com/LOG-ED/docker-micro/proto"
-	"github.com/micro/go-grpc"
+	micro "github.com/micro/go-micro"
 )
 
 const serviceName = "go.micro.api.task"
@@ -13,7 +13,7 @@ const serviceName = "go.micro.api.task"
 var cl proto.TaskClient
 
 func init() {
-	service := grpc.NewService()
+	service := micro.NewService()
 	service.Init()
 
 	// use the generated client stub

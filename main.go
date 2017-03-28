@@ -6,12 +6,11 @@ import (
 
 	proto "github.com/LOG-ED/docker-micro/proto"
 	"github.com/LOG-ED/docker-micro/server"
-	grpc "github.com/micro/go-grpc"
 	"github.com/micro/go-micro"
 )
 
 func main() {
-	service := grpc.NewService(
+	service := micro.NewService(
 		micro.Name("go.micro.api.task"),
 		micro.RegisterTTL(time.Second*30),
 		micro.RegisterInterval(time.Second*10),

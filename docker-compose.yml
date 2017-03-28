@@ -22,10 +22,13 @@ services:
         ports:
             - "80:8082"
 
-    client:
+    trace:
         build:
             context: .
-            dockerfile: Dockerfile.client
-        command: --task_endpoint=srv:40521
+            dockerfile: Dockerfile.trace
+        command: --registry_address=registry:8500
+        ports:
+            - "8700:8700"
+            - "9000:9000"
         depends_on:
             - srv
