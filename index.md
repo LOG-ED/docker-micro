@@ -12,10 +12,10 @@ Il corso propone un percorso formativo che mescola due progetti open source di s
 ### Svolgimento delle sessioni:  
 Le sessioni on site sono previste nei giorni:  
 
-- **giovedì 23 marzo dalle 18:30 alle 20:30.**  
-- **giovedì 30 marzo dalle 18:30 alle 20:30.** 
-- **giovedì 6 aprile dalle 18:30 alle 20:30.** 
-- **giovedì 13 aprile dalle 18:30 alle 20:30.** 
+- **mercoledì 22 marzo dalle 18:30 alle 20:30.**  
+- **mercoledì 29 marzo dalle 18:30 alle 20:30.** 
+- **mercoledì 5 aprile dalle 18:30 alle 20:30.** 
+- **mercoledì 12 aprile dalle 18:30 alle 20:30.** 
 
 Per la natura del corso è consigliato frequentare tutte le sessioni.
 Ogni sessione, della durata di 2 ore, prevede questi momenti formativi:
