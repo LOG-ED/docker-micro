@@ -64,6 +64,15 @@ In questa prima sessione vedremo come strutturare una semplice applicazione di e
 
 **Docker.** Con un recap iniziale, ripercorreremo tutti i concetti e gli strumenti visti finora, step-by-step, per avviare l'applicazione e valutare il suo funzionamento. Vedremo quindi come utilizzare Docker Compose per definire le componenti software (servizi) dell'applicazione di esempio e renderla facilmente distribuibile.
 
+#### Materiali
+
+- [Introduzione a Docker](https://log-ed.github.io/docker-get-started/sessione1/)
+- [Introduzione a Docker Compose](https://log-ed.github.io/docker-get-started/sessione1_1/)
+- [Guida alla creazione di un'immagine Docker](https://log-ed.github.io/docker-get-started/sessione2_1/)
+- [HTTP/2 Demo](http://www.http2demo.io/)
+- [Homepage di gRPC](http://www.grpc.io/)
+- [Esercitazione su gRPC e Golang](https://github.com/LOG-ED/go-grpc)
+
 ### Terza sessione
 
 **Golang.** In questa terza sessione, dopo il classico recap iniziale, valuteremo meglio la struttura della nostra applicazione e l'implementazione specifica in Golang. Vedremo come creare dei test per verificarne il funzionamento e per strutturare un processo di Continuous Integration.
