@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package proto;
+
+service SubTask {
+	rpc Save(SaveRequest) returns (SaveResponse) {}
+}
+
+message SaveRequest {
+	string operation = 1;
+}
+
+message SaveResponse {	
+	string exitCode = 1;
+}
