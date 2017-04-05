@@ -77,6 +77,14 @@ In questa prima sessione vedremo come strutturare una semplice applicazione di e
 
 **Golang.** In questa terza sessione, dopo il classico recap iniziale, valuteremo meglio la struttura della nostra applicazione e l'implementazione specifica in Golang. Vedremo come creare dei test per verificarne il funzionamento e per strutturare un processo di Continuous Integration.
 
+#### Materiali
+
+- [RPC framework per microservizi](https://github.com/micro/go-micro)
+- [Documentazione di Micro](https://micro.mu/docs/go-micro.html#writing-a-service)
+- [Homepage di Consul](https://www.consul.io/)
+- [Drone](https://github.com/drone/drone) Continuous Delivery platform built on Docker, written in Go
+- [Package testing di Golang](https://golang.org/pkg/testing/)
+
 ### Quarta sessione
 
 Con l'ultima sessione, avremo tutte le conoscenze minime per creare un nostro progetto di applicazione a microservizi. Lavoreremo a piccoli gruppi per implementare le componenti applicative, creare un processo di verifica e configurare il delivery dei nostri microservizi sul Docker Registry. 
